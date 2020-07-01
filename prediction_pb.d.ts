@@ -2,7 +2,6 @@
 // file: prediction.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class PredictionItem extends jspb.Message {
   clearDataList(): void;
@@ -79,6 +78,9 @@ export class Image extends jspb.Message {
   getImage_asB64(): string;
   setImage(value: Uint8Array | string): void;
 
+  getGroupId(): string;
+  setGroupId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
   static toObject(includeInstance: boolean, msg: Image): Image.AsObject;
@@ -93,6 +95,7 @@ export namespace Image {
   export type AsObject = {
     uuid: string,
     image: Uint8Array | string,
+    groupId: string,
   }
 }
 
@@ -195,128 +198,6 @@ export class GroundTruthResponse extends jspb.Message {
 
 export namespace GroundTruthResponse {
   export type AsObject = {
-  }
-}
-
-export class GetSampleRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSampleRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSampleRequest): GetSampleRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSampleRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSampleRequest;
-  static deserializeBinaryFromReader(message: GetSampleRequest, reader: jspb.BinaryReader): GetSampleRequest;
-}
-
-export namespace GetSampleRequest {
-  export type AsObject = {
-  }
-}
-
-export class GetSampleResponse extends jspb.Message {
-  clearSamplesList(): void;
-  getSamplesList(): Array<DataSample>;
-  setSamplesList(value: Array<DataSample>): void;
-  addSamples(value?: DataSample, index?: number): DataSample;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSampleResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSampleResponse): GetSampleResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSampleResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSampleResponse;
-  static deserializeBinaryFromReader(message: GetSampleResponse, reader: jspb.BinaryReader): GetSampleResponse;
-}
-
-export namespace GetSampleResponse {
-  export type AsObject = {
-    samplesList: Array<DataSample.AsObject>,
-  }
-}
-
-export class UpdateSampleRequest extends jspb.Message {
-  hasSample(): boolean;
-  clearSample(): void;
-  getSample(): DataSample | undefined;
-  setSample(value?: DataSample): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateSampleRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateSampleRequest): UpdateSampleRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateSampleRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateSampleRequest;
-  static deserializeBinaryFromReader(message: UpdateSampleRequest, reader: jspb.BinaryReader): UpdateSampleRequest;
-}
-
-export namespace UpdateSampleRequest {
-  export type AsObject = {
-    sample?: DataSample.AsObject,
-  }
-}
-
-export class UpdateSampleResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateSampleResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateSampleResponse): UpdateSampleResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateSampleResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateSampleResponse;
-  static deserializeBinaryFromReader(message: UpdateSampleResponse, reader: jspb.BinaryReader): UpdateSampleResponse;
-}
-
-export namespace UpdateSampleResponse {
-  export type AsObject = {
-  }
-}
-
-export class DataSample extends jspb.Message {
-  getUuid(): string;
-  setUuid(value: string): void;
-
-  getPath(): string;
-  setPath(value: string): void;
-
-  getLabel(): string;
-  setLabel(value: string): void;
-
-  getSize(): number;
-  setSize(value: number): void;
-
-  getOpened(): boolean;
-  setOpened(value: boolean): void;
-
-  getDatasetType(): string;
-  setDatasetType(value: string): void;
-
-  hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
-  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataSample.AsObject;
-  static toObject(includeInstance: boolean, msg: DataSample): DataSample.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DataSample, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataSample;
-  static deserializeBinaryFromReader(message: DataSample, reader: jspb.BinaryReader): DataSample;
-}
-
-export namespace DataSample {
-  export type AsObject = {
-    uuid: string,
-    path: string,
-    label: string,
-    size: number,
-    opened: boolean,
-    datasetType: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
