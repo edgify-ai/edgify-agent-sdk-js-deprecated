@@ -22,30 +22,10 @@ type EdgifyServiceCreateGroundTruth = {
   readonly responseType: typeof prediction_pb.GroundTruthResponse;
 };
 
-type EdgifyServiceGetSamples = {
-  readonly methodName: string;
-  readonly service: typeof EdgifyService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof prediction_pb.GetSampleRequest;
-  readonly responseType: typeof prediction_pb.GetSampleResponse;
-};
-
-type EdgifyServiceUpdateSample = {
-  readonly methodName: string;
-  readonly service: typeof EdgifyService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof prediction_pb.UpdateSampleRequest;
-  readonly responseType: typeof prediction_pb.UpdateSampleResponse;
-};
-
 export class EdgifyService {
   static readonly serviceName: string;
   static readonly GetPrediction: EdgifyServiceGetPrediction;
   static readonly CreateGroundTruth: EdgifyServiceCreateGroundTruth;
-  static readonly GetSamples: EdgifyServiceGetSamples;
-  static readonly UpdateSample: EdgifyServiceUpdateSample;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -97,24 +77,6 @@ export class EdgifyServiceClient {
   createGroundTruth(
     requestMessage: prediction_pb.GroundTruthRequest,
     callback: (error: ServiceError|null, responseMessage: prediction_pb.GroundTruthResponse|null) => void
-  ): UnaryResponse;
-  getSamples(
-    requestMessage: prediction_pb.GetSampleRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetSampleResponse|null) => void
-  ): UnaryResponse;
-  getSamples(
-    requestMessage: prediction_pb.GetSampleRequest,
-    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetSampleResponse|null) => void
-  ): UnaryResponse;
-  updateSample(
-    requestMessage: prediction_pb.UpdateSampleRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: prediction_pb.UpdateSampleResponse|null) => void
-  ): UnaryResponse;
-  updateSample(
-    requestMessage: prediction_pb.UpdateSampleRequest,
-    callback: (error: ServiceError|null, responseMessage: prediction_pb.UpdateSampleResponse|null) => void
   ): UnaryResponse;
 }
 
