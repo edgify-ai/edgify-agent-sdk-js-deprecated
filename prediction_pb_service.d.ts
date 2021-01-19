@@ -22,10 +22,20 @@ type EdgifyServiceCreateGroundTruth = {
   readonly responseType: typeof prediction_pb.GroundTruthResponse;
 };
 
+type EdgifyServiceGetCurrentModelDeployment = {
+  readonly methodName: string;
+  readonly service: typeof EdgifyService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof prediction_pb.GetCurrentModelDeploymentRequest;
+  readonly responseType: typeof prediction_pb.GetCurrentModelDeploymentResponse;
+};
+
 export class EdgifyService {
   static readonly serviceName: string;
   static readonly GetPrediction: EdgifyServiceGetPrediction;
   static readonly CreateGroundTruth: EdgifyServiceCreateGroundTruth;
+  static readonly GetCurrentModelDeployment: EdgifyServiceGetCurrentModelDeployment;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -78,5 +88,13 @@ export class EdgifyServiceClient {
     requestMessage: prediction_pb.GroundTruthRequest,
     callback: (error: ServiceError|null, responseMessage: prediction_pb.GroundTruthResponse|null) => void
   ): UnaryResponse;
+  getCurrentModelDeployment(
+    requestMessage: prediction_pb.GetCurrentModelDeploymentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentModelDeploymentResponse|null) => void
+  ): UnaryResponse;
+  getCurrentModelDeployment(
+    requestMessage: prediction_pb.GetCurrentModelDeploymentRequest,
+    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentModelDeploymentResponse|null) => void
+  ): UnaryResponse;
 }
-
