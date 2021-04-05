@@ -2088,7 +2088,14 @@ proto.PredictorConfig.toObject = function(includeInstance, msg) {
     defaultModelPath: jspb.Message.getFieldWithDefault(msg, 2, ""),
     defaultModelConfigPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
     defaultModelId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    certaintyEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    certaintyEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    top1HighCertaintyThreshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    minConfidencePerPrediction: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    minConfidenceSum: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    filteringModelPath: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    filteringModelConfigPath: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    filteringModelId: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    lookupTablePath: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -2144,6 +2151,34 @@ proto.PredictorConfig.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCertaintyEnabled(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setTop1HighCertaintyThreshold(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMinConfidencePerPrediction(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMinConfidenceSum(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilteringModelPath(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilteringModelConfigPath(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFilteringModelId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLookupTablePath(value);
       break;
     default:
       reader.skipField();
@@ -2206,6 +2241,55 @@ proto.PredictorConfig.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = message.getTop1HighCertaintyThreshold();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      6,
+      f
+    );
+  }
+  f = message.getMinConfidencePerPrediction();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      7,
+      f
+    );
+  }
+  f = message.getMinConfidenceSum();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      8,
+      f
+    );
+  }
+  f = message.getFilteringModelPath();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getFilteringModelConfigPath();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getFilteringModelId();
+  if (f !== 0) {
+    writer.writeUint32(
+      11,
+      f
+    );
+  }
+  f = message.getLookupTablePath();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -2299,6 +2383,132 @@ proto.PredictorConfig.prototype.getCertaintyEnabled = function() {
  */
 proto.PredictorConfig.prototype.setCertaintyEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional double top1_high_certainty_threshold = 6;
+ * @return {number}
+ */
+proto.PredictorConfig.prototype.getTop1HighCertaintyThreshold = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setTop1HighCertaintyThreshold = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional double min_confidence_per_prediction = 7;
+ * @return {number}
+ */
+proto.PredictorConfig.prototype.getMinConfidencePerPrediction = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setMinConfidencePerPrediction = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional double min_confidence_sum = 8;
+ * @return {number}
+ */
+proto.PredictorConfig.prototype.getMinConfidenceSum = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setMinConfidenceSum = function(value) {
+  return jspb.Message.setProto3FloatField(this, 8, value);
+};
+
+
+/**
+ * optional string filtering_model_path = 9;
+ * @return {string}
+ */
+proto.PredictorConfig.prototype.getFilteringModelPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setFilteringModelPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string filtering_model_config_path = 10;
+ * @return {string}
+ */
+proto.PredictorConfig.prototype.getFilteringModelConfigPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setFilteringModelConfigPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional uint32 filtering_model_id = 11;
+ * @return {number}
+ */
+proto.PredictorConfig.prototype.getFilteringModelId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setFilteringModelId = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional string lookup_table_path = 12;
+ * @return {string}
+ */
+proto.PredictorConfig.prototype.getLookupTablePath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.PredictorConfig} returns this
+ */
+proto.PredictorConfig.prototype.setLookupTablePath = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 

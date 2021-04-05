@@ -263,6 +263,27 @@ export class PredictorConfig extends jspb.Message {
   getCertaintyEnabled(): boolean;
   setCertaintyEnabled(value: boolean): void;
 
+  getTop1HighCertaintyThreshold(): number;
+  setTop1HighCertaintyThreshold(value: number): void;
+
+  getMinConfidencePerPrediction(): number;
+  setMinConfidencePerPrediction(value: number): void;
+
+  getMinConfidenceSum(): number;
+  setMinConfidenceSum(value: number): void;
+
+  getFilteringModelPath(): string;
+  setFilteringModelPath(value: string): void;
+
+  getFilteringModelConfigPath(): string;
+  setFilteringModelConfigPath(value: string): void;
+
+  getFilteringModelId(): number;
+  setFilteringModelId(value: number): void;
+
+  getLookupTablePath(): string;
+  setLookupTablePath(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorConfig.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorConfig): PredictorConfig.AsObject;
@@ -280,6 +301,13 @@ export namespace PredictorConfig {
     defaultModelConfigPath: string,
     defaultModelId: number,
     certaintyEnabled: boolean,
+    top1HighCertaintyThreshold: number,
+    minConfidencePerPrediction: number,
+    minConfidenceSum: number,
+    filteringModelPath: string,
+    filteringModelConfigPath: string,
+    filteringModelId: number,
+    lookupTablePath: string,
   }
 }
 
