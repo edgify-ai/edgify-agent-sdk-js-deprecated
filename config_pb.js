@@ -380,7 +380,9 @@ proto.AgentConfig.toObject = function(includeInstance, msg) {
     grpcPort: jspb.Message.getFieldWithDefault(msg, 4, 0),
     logLevel: jspb.Message.getFieldWithDefault(msg, 5, 0),
     webServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    networkMode: jspb.Message.getFieldWithDefault(msg, 7, "")
+    networkMode: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    reverseProxyServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    version: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -444,6 +446,14 @@ proto.AgentConfig.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setNetworkMode(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setReverseProxyServerPort(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVersion(value);
       break;
     default:
       reader.skipField();
@@ -520,6 +530,20 @@ proto.AgentConfig.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getReverseProxyServerPort();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getVersion();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -649,6 +673,42 @@ proto.AgentConfig.prototype.getNetworkMode = function() {
  */
 proto.AgentConfig.prototype.setNetworkMode = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional int32 reverse_proxy_server_port = 8;
+ * @return {number}
+ */
+proto.AgentConfig.prototype.getReverseProxyServerPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.AgentConfig} returns this
+ */
+proto.AgentConfig.prototype.setReverseProxyServerPort = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional string version = 9;
+ * @return {string}
+ */
+proto.AgentConfig.prototype.getVersion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.AgentConfig} returns this
+ */
+proto.AgentConfig.prototype.setVersion = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

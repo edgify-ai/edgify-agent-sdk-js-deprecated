@@ -25,6 +25,12 @@ export class AgentConfig extends jspb.Message {
   getNetworkMode(): string;
   setNetworkMode(value: string): void;
 
+  getReverseProxyServerPort(): number;
+  setReverseProxyServerPort(value: number): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentConfig.AsObject;
   static toObject(includeInstance: boolean, msg: AgentConfig): AgentConfig.AsObject;
@@ -44,6 +50,8 @@ export namespace AgentConfig {
     logLevel: number,
     webServerPort: number,
     networkMode: string,
+    reverseProxyServerPort: number,
+    version: string,
   }
 }
 
