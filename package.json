@@ -2,13 +2,14 @@
   "name": "edgify-agent-api",
   "version": "0.0.2",
   "description": "\"Client library to interact with Edgify agent\"",
-  "main": "prediction_pb_service.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Edgify",
   "license": "ISC",
   "dependencies": {
-    "@improbable-eng/grpc-web": "^0.12.0"
+    "@improbable-eng/grpc-web": "^0.12.0",
+    "ts-protoc-gen": "^0.12.0"
   }
 }

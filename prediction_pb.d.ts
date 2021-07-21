@@ -48,6 +48,9 @@ export class Prediction extends jspb.Message {
   getImage(): Image | undefined;
   setImage(value?: Image): void;
 
+  getSource(): string;
+  setSource(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Prediction.AsObject;
   static toObject(includeInstance: boolean, msg: Prediction): Prediction.AsObject;
@@ -66,6 +69,7 @@ export namespace Prediction {
     modelId: number,
     predictionsList: Array<PredictionItem.AsObject>,
     image?: Image.AsObject,
+    source: string,
   }
 }
 
@@ -99,6 +103,48 @@ export namespace Image {
   }
 }
 
+export class ModelDeployment extends jspb.Message {
+  getId(): number;
+  setId(value: number): void;
+
+  getModelId(): number;
+  setModelId(value: number): void;
+
+  getModelPath(): string;
+  setModelPath(value: string): void;
+
+  getConfigPath(): string;
+  setConfigPath(value: string): void;
+
+  getVerified(): boolean;
+  setVerified(value: boolean): void;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelDeployment.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelDeployment): ModelDeployment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ModelDeployment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelDeployment;
+  static deserializeBinaryFromReader(message: ModelDeployment, reader: jspb.BinaryReader): ModelDeployment;
+}
+
+export namespace ModelDeployment {
+  export type AsObject = {
+    id: number,
+    modelId: number,
+    modelPath: string,
+    configPath: string,
+    verified: boolean,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class GroundTruth extends jspb.Message {
   hasPrediction(): boolean;
   clearPrediction(): void;
@@ -107,6 +153,9 @@ export class GroundTruth extends jspb.Message {
 
   getLabel(): string;
   setLabel(value: string): void;
+
+  getSource(): string;
+  setSource(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroundTruth.AsObject;
@@ -122,10 +171,22 @@ export namespace GroundTruth {
   export type AsObject = {
     prediction?: Prediction.AsObject,
     label: string,
+    source: string,
   }
 }
 
 export class PredictionRequest extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): Image | undefined;
+  setImage(value?: Image): void;
+
+  getWithoutprediction(): boolean;
+  setWithoutprediction(value: boolean): void;
+
+  getSource(): string;
+  setSource(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionRequest): PredictionRequest.AsObject;
@@ -138,6 +199,9 @@ export class PredictionRequest extends jspb.Message {
 
 export namespace PredictionRequest {
   export type AsObject = {
+    image?: Image.AsObject,
+    withoutprediction: boolean,
+    source: string,
   }
 }
 
@@ -169,6 +233,9 @@ export class GroundTruthRequest extends jspb.Message {
   getGroundTruth(): GroundTruth | undefined;
   setGroundTruth(value?: GroundTruth): void;
 
+  getSource(): string;
+  setSource(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroundTruthRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GroundTruthRequest): GroundTruthRequest.AsObject;
@@ -182,6 +249,7 @@ export class GroundTruthRequest extends jspb.Message {
 export namespace GroundTruthRequest {
   export type AsObject = {
     groundTruth?: GroundTruth.AsObject,
+    source: string,
   }
 }
 
@@ -201,3 +269,40 @@ export namespace GroundTruthResponse {
   }
 }
 
+export class GetCurrentModelDeploymentRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCurrentModelDeploymentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentModelDeploymentRequest): GetCurrentModelDeploymentRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetCurrentModelDeploymentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentModelDeploymentRequest;
+  static deserializeBinaryFromReader(message: GetCurrentModelDeploymentRequest, reader: jspb.BinaryReader): GetCurrentModelDeploymentRequest;
+}
+
+export namespace GetCurrentModelDeploymentRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetCurrentModelDeploymentResponse extends jspb.Message {
+  hasModelDeployment(): boolean;
+  clearModelDeployment(): void;
+  getModelDeployment(): ModelDeployment | undefined;
+  setModelDeployment(value?: ModelDeployment): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCurrentModelDeploymentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentModelDeploymentResponse): GetCurrentModelDeploymentResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetCurrentModelDeploymentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentModelDeploymentResponse;
+  static deserializeBinaryFromReader(message: GetCurrentModelDeploymentResponse, reader: jspb.BinaryReader): GetCurrentModelDeploymentResponse;
+}
+
+export namespace GetCurrentModelDeploymentResponse {
+  export type AsObject = {
+    modelDeployment?: ModelDeployment.AsObject,
+  }
+}

@@ -1,54 +1,54 @@
-// package: edgify
-// file: prediction.proto
+// package: 
+// file: config.proto
 
-var prediction_pb = require("./prediction_pb");
+var config_pb = require("./config_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var EdgifyService = (function () {
-  function EdgifyService() {}
-  EdgifyService.serviceName = "edgify.EdgifyService";
-  return EdgifyService;
+var ConfigService = (function () {
+  function ConfigService() {}
+  ConfigService.serviceName = "ConfigService";
+  return ConfigService;
 }());
 
-EdgifyService.GetPrediction = {
-  methodName: "GetPrediction",
-  service: EdgifyService,
+ConfigService.GetConfig = {
+  methodName: "GetConfig",
+  service: ConfigService,
   requestStream: false,
   responseStream: false,
-  requestType: prediction_pb.PredictionRequest,
-  responseType: prediction_pb.PredictionResponse
+  requestType: config_pb.GetConfigRequest,
+  responseType: config_pb.GetConfigResponse
 };
 
-EdgifyService.CreateGroundTruth = {
-  methodName: "CreateGroundTruth",
-  service: EdgifyService,
+ConfigService.SetConfig = {
+  methodName: "SetConfig",
+  service: ConfigService,
   requestStream: false,
   responseStream: false,
-  requestType: prediction_pb.GroundTruthRequest,
-  responseType: prediction_pb.GroundTruthResponse
+  requestType: config_pb.SetConfigRequest,
+  responseType: config_pb.SetConfigResponse
 };
 
-EdgifyService.GetCurrentModelDeployment = {
-  methodName: "GetCurrentModelDeployment",
-  service: EdgifyService,
+ConfigService.Restart = {
+  methodName: "Restart",
+  service: ConfigService,
   requestStream: false,
   responseStream: false,
-  requestType: prediction_pb.GetCurrentModelDeploymentRequest,
-  responseType: prediction_pb.GetCurrentModelDeploymentResponse
+  requestType: config_pb.RestartRequest,
+  responseType: config_pb.RestartResponse
 };
 
-exports.EdgifyService = EdgifyService;
+exports.ConfigService = ConfigService;
 
-function EdgifyServiceClient(serviceHost, options) {
+function ConfigServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-EdgifyServiceClient.prototype.getPrediction = function getPrediction(requestMessage, metadata, callback) {
+ConfigServiceClient.prototype.getConfig = function getConfig(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(EdgifyService.GetPrediction, {
+  var client = grpc.unary(ConfigService.GetConfig, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -75,11 +75,11 @@ EdgifyServiceClient.prototype.getPrediction = function getPrediction(requestMess
   };
 };
 
-EdgifyServiceClient.prototype.createGroundTruth = function createGroundTruth(requestMessage, metadata, callback) {
+ConfigServiceClient.prototype.setConfig = function setConfig(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(EdgifyService.CreateGroundTruth, {
+  var client = grpc.unary(ConfigService.SetConfig, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -106,11 +106,11 @@ EdgifyServiceClient.prototype.createGroundTruth = function createGroundTruth(req
   };
 };
 
-EdgifyServiceClient.prototype.getCurrentModelDeployment = function getCurrentModelDeployment(requestMessage, metadata, callback) {
+ConfigServiceClient.prototype.restart = function restart(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(EdgifyService.GetCurrentModelDeployment, {
+  var client = grpc.unary(ConfigService.Restart, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -137,4 +137,5 @@ EdgifyServiceClient.prototype.getCurrentModelDeployment = function getCurrentMod
   };
 };
 
-exports.EdgifyServiceClient = EdgifyServiceClient;
+exports.ConfigServiceClient = ConfigServiceClient;
+
