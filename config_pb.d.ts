@@ -198,6 +198,9 @@ export class VideoStreamConfig extends jspb.Message {
   getUseReadInsteadOfGrab(): boolean;
   setUseReadInsteadOfGrab(value: boolean): void;
 
+  getReconnectOnBlackScreen(): boolean;
+  setReconnectOnBlackScreen(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VideoStreamConfig.AsObject;
   static toObject(includeInstance: boolean, msg: VideoStreamConfig): VideoStreamConfig.AsObject;
@@ -224,6 +227,7 @@ export namespace VideoStreamConfig {
     cropY2: number,
     framesToGrab: number,
     useReadInsteadOfGrab: boolean,
+    reconnectOnBlackScreen: boolean,
   }
 }
 
@@ -292,6 +296,14 @@ export class PredictorConfig extends jspb.Message {
   getLookupTablePath(): string;
   setLookupTablePath(value: string): void;
 
+  clearRetryItemsList(): void;
+  getRetryItemsList(): Array<string>;
+  setRetryItemsList(value: Array<string>): void;
+  addRetryItems(value: string, index?: number): string;
+
+  getRetryPeriod(): number;
+  setRetryPeriod(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorConfig.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorConfig): PredictorConfig.AsObject;
@@ -316,6 +328,8 @@ export namespace PredictorConfig {
     filteringModelConfigPath: string,
     filteringModelId: number,
     lookupTablePath: string,
+    retryItemsList: Array<string>,
+    retryPeriod: number,
   }
 }
 
@@ -352,6 +366,78 @@ export namespace DeviceManagerConfig {
     resourcesUpdatePeriod: number,
     workerSharedFolder: string,
     modelsFolder: string,
+  }
+}
+
+export class LoggerConfig extends jspb.Message {
+  getLogLevel(): number;
+  setLogLevel(value: number): void;
+
+  getConsoleLoggingEnabled(): boolean;
+  setConsoleLoggingEnabled(value: boolean): void;
+
+  getEncodeLogsAsJson(): boolean;
+  setEncodeLogsAsJson(value: boolean): void;
+
+  getFileLoggingEnabled(): boolean;
+  setFileLoggingEnabled(value: boolean): void;
+
+  getDirectory(): string;
+  setDirectory(value: string): void;
+
+  getFilename(): string;
+  setFilename(value: string): void;
+
+  getMaxFileSize(): number;
+  setMaxFileSize(value: number): void;
+
+  getMaxBackups(): number;
+  setMaxBackups(value: number): void;
+
+  getMaxAge(): number;
+  setMaxAge(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LoggerConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: LoggerConfig): LoggerConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LoggerConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LoggerConfig;
+  static deserializeBinaryFromReader(message: LoggerConfig, reader: jspb.BinaryReader): LoggerConfig;
+}
+
+export namespace LoggerConfig {
+  export type AsObject = {
+    logLevel: number,
+    consoleLoggingEnabled: boolean,
+    encodeLogsAsJson: boolean,
+    fileLoggingEnabled: boolean,
+    directory: string,
+    filename: string,
+    maxFileSize: number,
+    maxBackups: number,
+    maxAge: number,
+  }
+}
+
+export class TrainingConfig extends jspb.Message {
+  getWorkerGpuEnabled(): boolean;
+  setWorkerGpuEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TrainingConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: TrainingConfig): TrainingConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TrainingConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TrainingConfig;
+  static deserializeBinaryFromReader(message: TrainingConfig, reader: jspb.BinaryReader): TrainingConfig;
+}
+
+export namespace TrainingConfig {
+  export type AsObject = {
+    workerGpuEnabled: boolean,
   }
 }
 
@@ -396,6 +482,16 @@ export class Config extends jspb.Message {
   getDeviceManager(): DeviceManagerConfig | undefined;
   setDeviceManager(value?: DeviceManagerConfig): void;
 
+  hasLogger(): boolean;
+  clearLogger(): void;
+  getLogger(): LoggerConfig | undefined;
+  setLogger(value?: LoggerConfig): void;
+
+  hasTraining(): boolean;
+  clearTraining(): void;
+  getTraining(): TrainingConfig | undefined;
+  setTraining(value?: TrainingConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Config.AsObject;
   static toObject(includeInstance: boolean, msg: Config): Config.AsObject;
@@ -416,6 +512,8 @@ export namespace Config {
     analytics?: AnalyticsConfig.AsObject,
     predictor?: PredictorConfig.AsObject,
     deviceManager?: DeviceManagerConfig.AsObject,
+    logger?: LoggerConfig.AsObject,
+    training?: TrainingConfig.AsObject,
   }
 }
 

@@ -64,6 +64,15 @@ SamplesService.DeleteSamples = {
   responseType: samples_pb.DeleteSamplesResponse
 };
 
+SamplesService.DeleteSample = {
+  methodName: "DeleteSample",
+  service: SamplesService,
+  requestStream: false,
+  responseStream: false,
+  requestType: samples_pb.DeleteSampleRequest,
+  responseType: samples_pb.DeleteSampleResponse
+};
+
 exports.SamplesService = SamplesService;
 
 function SamplesServiceClient(serviceHost, options) {
@@ -257,4 +266,36 @@ SamplesServiceClient.prototype.deleteSamples = function deleteSamples(requestMes
   };
 };
 
+SamplesServiceClient.prototype.deleteSample = function deleteSample(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SamplesService.DeleteSample, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 exports.SamplesServiceClient = SamplesServiceClient;
+

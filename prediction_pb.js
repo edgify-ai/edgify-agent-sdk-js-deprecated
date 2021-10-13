@@ -7,6 +7,8 @@
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -267,42 +269,42 @@ proto.edgify.PredictionItem.repeatedFields_ = [1];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.PredictionItem.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.PredictionItem.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.PredictionItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.PredictionItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.PredictionItem} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.PredictionItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.PredictionItem} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.PredictionItem.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      dataList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -332,13 +334,13 @@ proto.edgify.PredictionItem.deserializeBinaryFromReader = function(msg, reader) 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {string} */ (reader.readString());
-        msg.addData(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -423,49 +425,50 @@ proto.edgify.Prediction.repeatedFields_ = [5];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.Prediction.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.Prediction.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.Prediction.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.Prediction.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.Prediction} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.Prediction.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    duration: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    predictedAt: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    modelId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    predictionsList: jspb.Message.toObjectList(msg.getPredictionsList(),
+    proto.edgify.PredictionItem.toObject, includeInstance),
+    image: (f = msg.getImage()) && proto.edgify.Image.toObject(includeInstance, f),
+    source: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    certain: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.Prediction} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.Prediction.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-      duration: jspb.Message.getFieldWithDefault(msg, 2, 0),
-      predictedAt: jspb.Message.getFieldWithDefault(msg, 3, ""),
-      modelId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-      predictionsList: jspb.Message.toObjectList(msg.getPredictionsList(),
-        proto.edgify.PredictionItem.toObject, includeInstance),
-      image: (f = msg.getImage()) && proto.edgify.Image.toObject(includeInstance, f),
-      source: jspb.Message.getFieldWithDefault(msg, 7, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -495,39 +498,43 @@ proto.edgify.Prediction.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setUuid(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setDuration(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setPredictedAt(value);
-        break;
-      case 4:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setModelId(value);
-        break;
-      case 5:
-        var value = new proto.edgify.PredictionItem;
-        reader.readMessage(value,proto.edgify.PredictionItem.deserializeBinaryFromReader);
-        msg.addPredictions(value);
-        break;
-      case 6:
-        var value = new proto.edgify.Image;
-        reader.readMessage(value,proto.edgify.Image.deserializeBinaryFromReader);
-        msg.setImage(value);
-        break;
-      case 7:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setSource(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDuration(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPredictedAt(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setModelId(value);
+      break;
+    case 5:
+      var value = new proto.edgify.PredictionItem;
+      reader.readMessage(value,proto.edgify.PredictionItem.deserializeBinaryFromReader);
+      msg.addPredictions(value);
+      break;
+    case 6:
+      var value = new proto.edgify.Image;
+      reader.readMessage(value,proto.edgify.Image.deserializeBinaryFromReader);
+      msg.setImage(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSource(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCertain(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -602,6 +609,13 @@ proto.edgify.Prediction.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCertain();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -693,7 +707,7 @@ proto.edgify.Prediction.prototype.getPredictionsList = function() {
 /**
  * @param {!Array<!proto.edgify.PredictionItem>} value
  * @return {!proto.edgify.Prediction} returns this
- */
+*/
 proto.edgify.Prediction.prototype.setPredictionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
@@ -731,7 +745,7 @@ proto.edgify.Prediction.prototype.getImage = function() {
 /**
  * @param {?proto.edgify.Image|undefined} value
  * @return {!proto.edgify.Prediction} returns this
- */
+*/
 proto.edgify.Prediction.prototype.setImage = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
@@ -773,48 +787,68 @@ proto.edgify.Prediction.prototype.setSource = function(value) {
 };
 
 
+/**
+ * optional bool certain = 8;
+ * @return {boolean}
+ */
+proto.edgify.Prediction.prototype.getCertain = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.edgify.Prediction} returns this
+ */
+proto.edgify.Prediction.prototype.setCertain = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
 
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.Image.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.Image.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.Image.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.Image.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.Image} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.Image.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    image: msg.getImage_asB64(),
+    groupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    deviceId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    source: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.Image} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.Image.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-      image: msg.getImage_asB64(),
-      groupId: jspb.Message.getFieldWithDefault(msg, 3, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -844,21 +878,29 @@ proto.edgify.Image.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setUuid(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setImage(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setGroupId(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setImage(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGroupId(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDeviceId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSource(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -906,6 +948,20 @@ proto.edgify.Image.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getDeviceId();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
+      f
+    );
+  }
+  f = message.getSource();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -943,7 +999,7 @@ proto.edgify.Image.prototype.getImage = function() {
  */
 proto.edgify.Image.prototype.getImage_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-    this.getImage()));
+      this.getImage()));
 };
 
 
@@ -956,7 +1012,7 @@ proto.edgify.Image.prototype.getImage_asB64 = function() {
  */
 proto.edgify.Image.prototype.getImage_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-    this.getImage()));
+      this.getImage()));
 };
 
 
@@ -987,51 +1043,87 @@ proto.edgify.Image.prototype.setGroupId = function(value) {
 };
 
 
+/**
+ * optional uint32 device_id = 4;
+ * @return {number}
+ */
+proto.edgify.Image.prototype.getDeviceId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.edgify.Image} returns this
+ */
+proto.edgify.Image.prototype.setDeviceId = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string source = 5;
+ * @return {string}
+ */
+proto.edgify.Image.prototype.getSource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.edgify.Image} returns this
+ */
+proto.edgify.Image.prototype.setSource = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.ModelDeployment.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.ModelDeployment.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.ModelDeployment.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.ModelDeployment.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.ModelDeployment} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.ModelDeployment.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    modelId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    modelPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    configPath: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    verified: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.ModelDeployment} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.ModelDeployment.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-      modelId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-      modelPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
-      configPath: jspb.Message.getFieldWithDefault(msg, 4, ""),
-      verified: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-      createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1061,34 +1153,34 @@ proto.edgify.ModelDeployment.deserializeBinaryFromReader = function(msg, reader)
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setId(value);
-        break;
-      case 2:
-        var value = /** @type {number} */ (reader.readUint32());
-        msg.setModelId(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setModelPath(value);
-        break;
-      case 4:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setConfigPath(value);
-        break;
-      case 5:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setVerified(value);
-        break;
-      case 6:
-        var value = new google_protobuf_timestamp_pb.Timestamp;
-        reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-        msg.setCreatedAt(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setModelId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelPath(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConfigPath(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setVerified(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1264,7 +1356,7 @@ proto.edgify.ModelDeployment.prototype.getCreatedAt = function() {
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.edgify.ModelDeployment} returns this
- */
+*/
 proto.edgify.ModelDeployment.prototype.setCreatedAt = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
@@ -1292,44 +1384,44 @@ proto.edgify.ModelDeployment.prototype.hasCreatedAt = function() {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.GroundTruth.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.GroundTruth.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.GroundTruth.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.GroundTruth.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.GroundTruth} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.GroundTruth.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    prediction: (f = msg.getPrediction()) && proto.edgify.Prediction.toObject(includeInstance, f),
+    label: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    source: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.GroundTruth} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.GroundTruth.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      prediction: (f = msg.getPrediction()) && proto.edgify.Prediction.toObject(includeInstance, f),
-      label: jspb.Message.getFieldWithDefault(msg, 2, ""),
-      source: jspb.Message.getFieldWithDefault(msg, 3, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1359,22 +1451,22 @@ proto.edgify.GroundTruth.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.edgify.Prediction;
-        reader.readMessage(value,proto.edgify.Prediction.deserializeBinaryFromReader);
-        msg.setPrediction(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setLabel(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setSource(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.edgify.Prediction;
+      reader.readMessage(value,proto.edgify.Prediction.deserializeBinaryFromReader);
+      msg.setPrediction(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabel(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSource(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1439,7 +1531,7 @@ proto.edgify.GroundTruth.prototype.getPrediction = function() {
 /**
  * @param {?proto.edgify.Prediction|undefined} value
  * @return {!proto.edgify.GroundTruth} returns this
- */
+*/
 proto.edgify.GroundTruth.prototype.setPrediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1503,44 +1595,43 @@ proto.edgify.GroundTruth.prototype.setSource = function(value) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.PredictionRequest.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.PredictionRequest.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.PredictionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.PredictionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.PredictionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.PredictionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    image: (f = msg.getImage()) && proto.edgify.Image.toObject(includeInstance, f),
+    withoutprediction: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.PredictionRequest} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.PredictionRequest.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      image: (f = msg.getImage()) && proto.edgify.Image.toObject(includeInstance, f),
-      withoutprediction: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-      source: jspb.Message.getFieldWithDefault(msg, 3, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1570,22 +1661,18 @@ proto.edgify.PredictionRequest.deserializeBinaryFromReader = function(msg, reade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.edgify.Image;
-        reader.readMessage(value,proto.edgify.Image.deserializeBinaryFromReader);
-        msg.setImage(value);
-        break;
-      case 2:
-        var value = /** @type {boolean} */ (reader.readBool());
-        msg.setWithoutprediction(value);
-        break;
-      case 3:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setSource(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.edgify.Image;
+      reader.readMessage(value,proto.edgify.Image.deserializeBinaryFromReader);
+      msg.setImage(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithoutprediction(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1627,13 +1714,6 @@ proto.edgify.PredictionRequest.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getSource();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -1650,7 +1730,7 @@ proto.edgify.PredictionRequest.prototype.getImage = function() {
 /**
  * @param {?proto.edgify.Image|undefined} value
  * @return {!proto.edgify.PredictionRequest} returns this
- */
+*/
 proto.edgify.PredictionRequest.prototype.setImage = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1692,64 +1772,46 @@ proto.edgify.PredictionRequest.prototype.setWithoutprediction = function(value) 
 };
 
 
-/**
- * optional string source = 3;
- * @return {string}
- */
-proto.edgify.PredictionRequest.prototype.getSource = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.edgify.PredictionRequest} returns this
- */
-proto.edgify.PredictionRequest.prototype.setSource = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
 
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.PredictionResponse.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.PredictionResponse.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.PredictionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.PredictionResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.PredictionResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.PredictionResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    prediction: (f = msg.getPrediction()) && proto.edgify.Prediction.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.PredictionResponse} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.PredictionResponse.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      prediction: (f = msg.getPrediction()) && proto.edgify.Prediction.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1779,14 +1841,14 @@ proto.edgify.PredictionResponse.deserializeBinaryFromReader = function(msg, read
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.edgify.Prediction;
-        reader.readMessage(value,proto.edgify.Prediction.deserializeBinaryFromReader);
-        msg.setPrediction(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.edgify.Prediction;
+      reader.readMessage(value,proto.edgify.Prediction.deserializeBinaryFromReader);
+      msg.setPrediction(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1837,7 +1899,7 @@ proto.edgify.PredictionResponse.prototype.getPrediction = function() {
 /**
  * @param {?proto.edgify.Prediction|undefined} value
  * @return {!proto.edgify.PredictionResponse} returns this
- */
+*/
 proto.edgify.PredictionResponse.prototype.setPrediction = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1865,43 +1927,42 @@ proto.edgify.PredictionResponse.prototype.hasPrediction = function() {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.GroundTruthRequest.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.GroundTruthRequest.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.GroundTruthRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.GroundTruthRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.GroundTruthRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.GroundTruthRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    groundTruth: (f = msg.getGroundTruth()) && proto.edgify.GroundTruth.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.GroundTruthRequest} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.GroundTruthRequest.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      groundTruth: (f = msg.getGroundTruth()) && proto.edgify.GroundTruth.toObject(includeInstance, f),
-      source: jspb.Message.getFieldWithDefault(msg, 2, "")
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -1931,18 +1992,14 @@ proto.edgify.GroundTruthRequest.deserializeBinaryFromReader = function(msg, read
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.edgify.GroundTruth;
-        reader.readMessage(value,proto.edgify.GroundTruth.deserializeBinaryFromReader);
-        msg.setGroundTruth(value);
-        break;
-      case 2:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setSource(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.edgify.GroundTruth;
+      reader.readMessage(value,proto.edgify.GroundTruth.deserializeBinaryFromReader);
+      msg.setGroundTruth(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -1977,13 +2034,6 @@ proto.edgify.GroundTruthRequest.serializeBinaryToWriter = function(message, writ
       proto.edgify.GroundTruth.serializeBinaryToWriter
     );
   }
-  f = message.getSource();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -2000,7 +2050,7 @@ proto.edgify.GroundTruthRequest.prototype.getGroundTruth = function() {
 /**
  * @param {?proto.edgify.GroundTruth|undefined} value
  * @return {!proto.edgify.GroundTruthRequest} returns this
- */
+*/
 proto.edgify.GroundTruthRequest.prototype.setGroundTruth = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2024,64 +2074,46 @@ proto.edgify.GroundTruthRequest.prototype.hasGroundTruth = function() {
 };
 
 
-/**
- * optional string source = 2;
- * @return {string}
- */
-proto.edgify.GroundTruthRequest.prototype.getSource = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.edgify.GroundTruthRequest} returns this
- */
-proto.edgify.GroundTruthRequest.prototype.setSource = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
 
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.GroundTruthResponse.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.GroundTruthResponse.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.GroundTruthResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.GroundTruthResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.GroundTruthResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.GroundTruthResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.GroundTruthResponse} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.GroundTruthResponse.toObject = function(includeInstance, msg) {
-    var f, obj = {
-
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2111,9 +2143,9 @@ proto.edgify.GroundTruthResponse.deserializeBinaryFromReader = function(msg, rea
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      default:
-        reader.skipField();
-        break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2147,42 +2179,42 @@ proto.edgify.GroundTruthResponse.serializeBinaryToWriter = function(message, wri
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.GetCurrentModelDeploymentRequest.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.GetCurrentModelDeploymentRequest.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.GetCurrentModelDeploymentRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.GetCurrentModelDeploymentRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.GetCurrentModelDeploymentRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.GetCurrentModelDeploymentRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.GetCurrentModelDeploymentRequest} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.GetCurrentModelDeploymentRequest.toObject = function(includeInstance, msg) {
-    var f, obj = {
-
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2212,9 +2244,9 @@ proto.edgify.GetCurrentModelDeploymentRequest.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      default:
-        reader.skipField();
-        break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2248,42 +2280,42 @@ proto.edgify.GetCurrentModelDeploymentRequest.serializeBinaryToWriter = function
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.edgify.GetCurrentModelDeploymentResponse.prototype.toObject = function(opt_includeInstance) {
-    return proto.edgify.GetCurrentModelDeploymentResponse.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.edgify.GetCurrentModelDeploymentResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.edgify.GetCurrentModelDeploymentResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.edgify.GetCurrentModelDeploymentResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.edgify.GetCurrentModelDeploymentResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    modelDeployment: (f = msg.getModelDeployment()) && proto.edgify.ModelDeployment.toObject(includeInstance, f)
   };
 
-
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.edgify.GetCurrentModelDeploymentResponse} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.edgify.GetCurrentModelDeploymentResponse.toObject = function(includeInstance, msg) {
-    var f, obj = {
-      modelDeployment: (f = msg.getModelDeployment()) && proto.edgify.ModelDeployment.toObject(includeInstance, f)
-    };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
 
 
@@ -2313,14 +2345,14 @@ proto.edgify.GetCurrentModelDeploymentResponse.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.edgify.ModelDeployment;
-        reader.readMessage(value,proto.edgify.ModelDeployment.deserializeBinaryFromReader);
-        msg.setModelDeployment(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.edgify.ModelDeployment;
+      reader.readMessage(value,proto.edgify.ModelDeployment.deserializeBinaryFromReader);
+      msg.setModelDeployment(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
@@ -2371,7 +2403,7 @@ proto.edgify.GetCurrentModelDeploymentResponse.prototype.getModelDeployment = fu
 /**
  * @param {?proto.edgify.ModelDeployment|undefined} value
  * @return {!proto.edgify.GetCurrentModelDeploymentResponse} returns this
- */
+*/
 proto.edgify.GetCurrentModelDeploymentResponse.prototype.setModelDeployment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };

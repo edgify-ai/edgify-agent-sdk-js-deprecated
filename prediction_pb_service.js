@@ -138,3 +138,4 @@ EdgifyServiceClient.prototype.getCurrentModelDeployment = function getCurrentMod
 };
 
 exports.EdgifyServiceClient = EdgifyServiceClient;
+

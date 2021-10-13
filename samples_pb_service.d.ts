@@ -58,6 +58,15 @@ type SamplesServiceDeleteSamples = {
   readonly responseType: typeof samples_pb.DeleteSamplesResponse;
 };
 
+type SamplesServiceDeleteSample = {
+  readonly methodName: string;
+  readonly service: typeof SamplesService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof samples_pb.DeleteSampleRequest;
+  readonly responseType: typeof samples_pb.DeleteSampleResponse;
+};
+
 export class SamplesService {
   static readonly serviceName: string;
   static readonly GetSamples: SamplesServiceGetSamples;
@@ -66,6 +75,7 @@ export class SamplesService {
   static readonly Sync: SamplesServiceSync;
   static readonly DeleteAllSamples: SamplesServiceDeleteAllSamples;
   static readonly DeleteSamples: SamplesServiceDeleteSamples;
+  static readonly DeleteSample: SamplesServiceDeleteSample;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -154,4 +164,14 @@ export class SamplesServiceClient {
     requestMessage: samples_pb.DeleteSamplesRequest,
     callback: (error: ServiceError|null, responseMessage: samples_pb.DeleteSamplesResponse|null) => void
   ): UnaryResponse;
+  deleteSample(
+    requestMessage: samples_pb.DeleteSampleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: samples_pb.DeleteSampleResponse|null) => void
+  ): UnaryResponse;
+  deleteSample(
+    requestMessage: samples_pb.DeleteSampleRequest,
+    callback: (error: ServiceError|null, responseMessage: samples_pb.DeleteSampleResponse|null) => void
+  ): UnaryResponse;
 }
+

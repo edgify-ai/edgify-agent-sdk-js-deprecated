@@ -163,6 +163,12 @@ export class DataSample extends jspb.Message {
   getGroupId(): string;
   setGroupId(value: string): void;
 
+  getDeviceId(): number;
+  setDeviceId(value: number): void;
+
+  getSource(): string;
+  setSource(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSample.AsObject;
   static toObject(includeInstance: boolean, msg: DataSample): DataSample.AsObject;
@@ -183,6 +189,8 @@ export namespace DataSample {
     datasetType: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     groupId: string,
+    deviceId: number,
+    source: string,
   }
 }
 
@@ -272,6 +280,42 @@ export namespace DeleteSamplesRequest {
   }
 }
 
+export class DeleteSampleResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSampleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSampleResponse): DeleteSampleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteSampleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSampleResponse;
+  static deserializeBinaryFromReader(message: DeleteSampleResponse, reader: jspb.BinaryReader): DeleteSampleResponse;
+}
+
+export namespace DeleteSampleResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteSampleRequest extends jspb.Message {
+  getUuid(): string;
+  setUuid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSampleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSampleRequest): DeleteSampleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteSampleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSampleRequest;
+  static deserializeBinaryFromReader(message: DeleteSampleRequest, reader: jspb.BinaryReader): DeleteSampleRequest;
+}
+
+export namespace DeleteSampleRequest {
+  export type AsObject = {
+    uuid: string,
+  }
+}
+
 export class DeleteSamplesResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteSamplesResponse.AsObject;
@@ -287,3 +331,4 @@ export namespace DeleteSamplesResponse {
   export type AsObject = {
   }
 }
+

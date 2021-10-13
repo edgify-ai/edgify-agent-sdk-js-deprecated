@@ -98,3 +98,4 @@ export class EdgifyServiceClient {
     callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentModelDeploymentResponse|null) => void
   ): UnaryResponse;
 }
+

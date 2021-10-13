@@ -1,6 +1,6 @@
 {
   "name": "edgify-agent-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "\"Client library to interact with Edgify agent\"",
   "main": "index.js",
   "scripts": {

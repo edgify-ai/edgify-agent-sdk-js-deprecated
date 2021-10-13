@@ -2,6 +2,7 @@
 // file: prediction.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class PredictionItem extends jspb.Message {
   clearDataList(): void;
@@ -51,6 +52,9 @@ export class Prediction extends jspb.Message {
   getSource(): string;
   setSource(value: string): void;
 
+  getCertain(): boolean;
+  setCertain(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Prediction.AsObject;
   static toObject(includeInstance: boolean, msg: Prediction): Prediction.AsObject;
@@ -70,6 +74,7 @@ export namespace Prediction {
     predictionsList: Array<PredictionItem.AsObject>,
     image?: Image.AsObject,
     source: string,
+    certain: boolean,
   }
 }
 
@@ -84,6 +89,12 @@ export class Image extends jspb.Message {
 
   getGroupId(): string;
   setGroupId(value: string): void;
+
+  getDeviceId(): number;
+  setDeviceId(value: number): void;
+
+  getSource(): string;
+  setSource(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
@@ -100,6 +111,8 @@ export namespace Image {
     uuid: string,
     image: Uint8Array | string,
     groupId: string,
+    deviceId: number,
+    source: string,
   }
 }
 
@@ -184,9 +197,6 @@ export class PredictionRequest extends jspb.Message {
   getWithoutprediction(): boolean;
   setWithoutprediction(value: boolean): void;
 
-  getSource(): string;
-  setSource(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionRequest): PredictionRequest.AsObject;
@@ -201,7 +211,6 @@ export namespace PredictionRequest {
   export type AsObject = {
     image?: Image.AsObject,
     withoutprediction: boolean,
-    source: string,
   }
 }
 
@@ -233,9 +242,6 @@ export class GroundTruthRequest extends jspb.Message {
   getGroundTruth(): GroundTruth | undefined;
   setGroundTruth(value?: GroundTruth): void;
 
-  getSource(): string;
-  setSource(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroundTruthRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GroundTruthRequest): GroundTruthRequest.AsObject;
@@ -249,7 +255,6 @@ export class GroundTruthRequest extends jspb.Message {
 export namespace GroundTruthRequest {
   export type AsObject = {
     groundTruth?: GroundTruth.AsObject,
-    source: string,
   }
 }
 
@@ -306,3 +311,4 @@ export namespace GetCurrentModelDeploymentResponse {
     modelDeployment?: ModelDeployment.AsObject,
   }
 }
+
