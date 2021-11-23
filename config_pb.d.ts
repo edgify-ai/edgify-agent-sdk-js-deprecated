@@ -31,6 +31,9 @@ export class AgentConfig extends jspb.Message {
   getVersion(): string;
   setVersion(value: string): void;
 
+  getStaticFilesDirectory(): string;
+  setStaticFilesDirectory(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentConfig.AsObject;
   static toObject(includeInstance: boolean, msg: AgentConfig): AgentConfig.AsObject;
@@ -52,6 +55,7 @@ export namespace AgentConfig {
     networkMode: string,
     reverseProxyServerPort: number,
     version: string,
+    staticFilesDirectory: string,
   }
 }
 
@@ -201,6 +205,9 @@ export class VideoStreamConfig extends jspb.Message {
   getReconnectOnBlackScreen(): boolean;
   setReconnectOnBlackScreen(value: boolean): void;
 
+  getNumberOfSamplesToSave(): number;
+  setNumberOfSamplesToSave(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VideoStreamConfig.AsObject;
   static toObject(includeInstance: boolean, msg: VideoStreamConfig): VideoStreamConfig.AsObject;
@@ -228,6 +235,7 @@ export namespace VideoStreamConfig {
     framesToGrab: number,
     useReadInsteadOfGrab: boolean,
     reconnectOnBlackScreen: boolean,
+    numberOfSamplesToSave: number,
   }
 }
 

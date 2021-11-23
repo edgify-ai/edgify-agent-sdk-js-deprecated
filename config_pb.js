@@ -428,7 +428,8 @@ proto.AgentConfig.toObject = function(includeInstance, msg) {
     webServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0),
     networkMode: jspb.Message.getFieldWithDefault(msg, 7, ""),
     reverseProxyServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 9, "")
+    version: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    staticFilesDirectory: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -500,6 +501,10 @@ proto.AgentConfig.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStaticFilesDirectory(value);
       break;
     default:
       reader.skipField();
@@ -590,6 +595,13 @@ proto.AgentConfig.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getStaticFilesDirectory();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -755,6 +767,24 @@ proto.AgentConfig.prototype.getVersion = function() {
  */
 proto.AgentConfig.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string static_files_directory = 10;
+ * @return {string}
+ */
+proto.AgentConfig.prototype.getStaticFilesDirectory = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.AgentConfig} returns this
+ */
+proto.AgentConfig.prototype.setStaticFilesDirectory = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
@@ -1494,7 +1524,8 @@ proto.VideoStreamConfig.toObject = function(includeInstance, msg) {
     cropY2: jspb.Message.getFieldWithDefault(msg, 12, 0),
     framesToGrab: jspb.Message.getFieldWithDefault(msg, 13, 0),
     useReadInsteadOfGrab: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    reconnectOnBlackScreen: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
+    reconnectOnBlackScreen: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    numberOfSamplesToSave: jspb.Message.getFieldWithDefault(msg, 16, 0)
   };
 
   if (includeInstance) {
@@ -1590,6 +1621,10 @@ proto.VideoStreamConfig.deserializeBinaryFromReader = function(msg, reader) {
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReconnectOnBlackScreen(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setNumberOfSamplesToSave(value);
       break;
     default:
       reader.skipField();
@@ -1722,6 +1757,13 @@ proto.VideoStreamConfig.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       15,
+      f
+    );
+  }
+  f = message.getNumberOfSamplesToSave();
+  if (f !== 0) {
+    writer.writeInt32(
+      16,
       f
     );
   }
@@ -1995,6 +2037,24 @@ proto.VideoStreamConfig.prototype.getReconnectOnBlackScreen = function() {
  */
 proto.VideoStreamConfig.prototype.setReconnectOnBlackScreen = function(value) {
   return jspb.Message.setProto3BooleanField(this, 15, value);
+};
+
+
+/**
+ * optional int32 number_of_samples_to_save = 16;
+ * @return {number}
+ */
+proto.VideoStreamConfig.prototype.getNumberOfSamplesToSave = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.VideoStreamConfig} returns this
+ */
+proto.VideoStreamConfig.prototype.setNumberOfSamplesToSave = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 

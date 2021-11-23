@@ -188,6 +188,34 @@ export namespace GroundTruth {
   }
 }
 
+export class LookupTableValue extends jspb.Message {
+  getTranslatedName(): string;
+  setTranslatedName(value: string): void;
+
+  getHumanReadableName(): string;
+  setHumanReadableName(value: string): void;
+
+  getComment(): string;
+  setComment(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LookupTableValue.AsObject;
+  static toObject(includeInstance: boolean, msg: LookupTableValue): LookupTableValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LookupTableValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LookupTableValue;
+  static deserializeBinaryFromReader(message: LookupTableValue, reader: jspb.BinaryReader): LookupTableValue;
+}
+
+export namespace LookupTableValue {
+  export type AsObject = {
+    translatedName: string,
+    humanReadableName: string,
+    comment: string,
+  }
+}
+
 export class PredictionRequest extends jspb.Message {
   hasImage(): boolean;
   clearImage(): void;
@@ -309,6 +337,41 @@ export class GetCurrentModelDeploymentResponse extends jspb.Message {
 export namespace GetCurrentModelDeploymentResponse {
   export type AsObject = {
     modelDeployment?: ModelDeployment.AsObject,
+  }
+}
+
+export class GetCurrentLookupTableRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCurrentLookupTableRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentLookupTableRequest): GetCurrentLookupTableRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetCurrentLookupTableRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentLookupTableRequest;
+  static deserializeBinaryFromReader(message: GetCurrentLookupTableRequest, reader: jspb.BinaryReader): GetCurrentLookupTableRequest;
+}
+
+export namespace GetCurrentLookupTableRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetCurrentLookupTableResponse extends jspb.Message {
+  getLookupTableMap(): jspb.Map<string, LookupTableValue>;
+  clearLookupTableMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCurrentLookupTableResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentLookupTableResponse): GetCurrentLookupTableResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetCurrentLookupTableResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentLookupTableResponse;
+  static deserializeBinaryFromReader(message: GetCurrentLookupTableResponse, reader: jspb.BinaryReader): GetCurrentLookupTableResponse;
+}
+
+export namespace GetCurrentLookupTableResponse {
+  export type AsObject = {
+    lookupTableMap: Array<[string, LookupTableValue.AsObject]>,
   }
 }
 

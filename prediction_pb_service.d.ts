@@ -31,11 +31,21 @@ type EdgifyServiceGetCurrentModelDeployment = {
   readonly responseType: typeof prediction_pb.GetCurrentModelDeploymentResponse;
 };
 
+type EdgifyServiceGetCurrentLookupTable = {
+  readonly methodName: string;
+  readonly service: typeof EdgifyService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof prediction_pb.GetCurrentLookupTableRequest;
+  readonly responseType: typeof prediction_pb.GetCurrentLookupTableResponse;
+};
+
 export class EdgifyService {
   static readonly serviceName: string;
   static readonly GetPrediction: EdgifyServiceGetPrediction;
   static readonly CreateGroundTruth: EdgifyServiceCreateGroundTruth;
   static readonly GetCurrentModelDeployment: EdgifyServiceGetCurrentModelDeployment;
+  static readonly GetCurrentLookupTable: EdgifyServiceGetCurrentLookupTable;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -96,6 +106,15 @@ export class EdgifyServiceClient {
   getCurrentModelDeployment(
     requestMessage: prediction_pb.GetCurrentModelDeploymentRequest,
     callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentModelDeploymentResponse|null) => void
+  ): UnaryResponse;
+  getCurrentLookupTable(
+    requestMessage: prediction_pb.GetCurrentLookupTableRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentLookupTableResponse|null) => void
+  ): UnaryResponse;
+  getCurrentLookupTable(
+    requestMessage: prediction_pb.GetCurrentLookupTableRequest,
+    callback: (error: ServiceError|null, responseMessage: prediction_pb.GetCurrentLookupTableResponse|null) => void
   ): UnaryResponse;
 }
 
