@@ -141,6 +141,9 @@ export class DataManagerConfig extends jspb.Message {
   getBackendUpdatePeriod(): number;
   setBackendUpdatePeriod(value: number): void;
 
+  getTrainingBufferRatio(): number;
+  setTrainingBufferRatio(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataManagerConfig.AsObject;
   static toObject(includeInstance: boolean, msg: DataManagerConfig): DataManagerConfig.AsObject;
@@ -156,6 +159,7 @@ export namespace DataManagerConfig {
     path: string,
     size: number,
     backendUpdatePeriod: number,
+    trainingBufferRatio: number,
   }
 }
 

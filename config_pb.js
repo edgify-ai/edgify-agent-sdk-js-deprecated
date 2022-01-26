@@ -1322,7 +1322,8 @@ proto.DataManagerConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
     path: jspb.Message.getFieldWithDefault(msg, 1, ""),
     size: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    backendUpdatePeriod: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    backendUpdatePeriod: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    trainingBufferRatio: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -1371,6 +1372,10 @@ proto.DataManagerConfig.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint32());
       msg.setBackendUpdatePeriod(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTrainingBufferRatio(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1418,6 +1423,13 @@ proto.DataManagerConfig.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeUint32(
       3,
+      f
+    );
+  }
+  f = message.getTrainingBufferRatio();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      4,
       f
     );
   }
@@ -1475,6 +1487,24 @@ proto.DataManagerConfig.prototype.getBackendUpdatePeriod = function() {
  */
 proto.DataManagerConfig.prototype.setBackendUpdatePeriod = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional float training_buffer_ratio = 4;
+ * @return {number}
+ */
+proto.DataManagerConfig.prototype.getTrainingBufferRatio = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.DataManagerConfig} returns this
+ */
+proto.DataManagerConfig.prototype.setTrainingBufferRatio = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
